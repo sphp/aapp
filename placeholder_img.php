@@ -1,3 +1,4 @@
+<?php
 function mkImage($width, $height, $color='CCCCCC') {
     $img = imagecreatetruecolor($width, $height);
     $bgc = sscanf($color, "%02x%02x%02x");
@@ -17,3 +18,5 @@ function mkImage($width, $height, $color='CCCCCC') {
     imagedestroy($img);
     return 'data:image/png;base64,' . base64_encode($data);
 }
+?>
+<img src="<?=mkImage(600,200)?>"> <img src="<?=mkImage(600,200,'ff00ff')?>">
